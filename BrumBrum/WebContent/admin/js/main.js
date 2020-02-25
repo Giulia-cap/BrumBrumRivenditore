@@ -419,7 +419,7 @@ function prova()
 	    var spese = [annoPos0, annoPos1, annoPos2, annoPos3, annoPos4, annoPos5]
 	   
 	    if (document.getElementById("chartType").value=="PerAnno") {
-	      ctx.height = 330;
+	      ctx.height = 430;
 	       myChart = new Chart(ctx, {
 	        type: 'line',
 	        data: {
@@ -457,8 +457,8 @@ function prova()
 	              ticks: {
 	                beginAtZero: true,
 	                maxTicksLimit: 5,
-	                stepSize: 10000,
-	                max: 100000,
+	                stepSize: 20000,
+	                max: 300000,
 	                fontFamily: "Poppins",
 	                fontSize: 12
 	              },
