@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	version="4.0">
+
+	<display-name>BrumBrum</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>FaiLogin</servlet-name>
+		<servlet-class>controller.Login</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FaiLogin</servlet-name>
+		<url-pattern>/FaiLogin</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>RegistrazioneUtente</servlet-name>
+		<servlet-class>controller.RegistrazioneUtente</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RegistrazioneUtente</servlet-name>
+		<url-pattern>/RegistrazioneUtente</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AddCar</servlet-name>
+		<servlet-class>controller.AddCar</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AddCar</servlet-name>
+		<url-pattern>/AddCar</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Cerca</servlet-name>
+		<servlet-class>controller.Cerca</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Cerca</servlet-name>
+		<url-pattern>/Cerca</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>VisAutoSelezionata</servlet-name>
+		<servlet-class>controller.VisAutoSelezionata</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>VisAutoSelezionata</servlet-name>
+		<url-pattern>/VisAutoSelezionata</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>ProfiloUtente</servlet-name>
+		<servlet-class>controller.ProfiloUtente</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ProfiloUtente</servlet-name>
+		<url-pattern>/ProfiloUtente</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>EliminaProfilo</servlet-name>
+		<servlet-class>controller.EliminaProfilo</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>EliminaProfilo</servlet-name>
+		<url-pattern>/EliminaProfilo</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CompraAuto</servlet-name>
+		<servlet-class>controller.CompraAuto</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CompraAuto</servlet-name>
+		<url-pattern>/CompraAuto</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>NoleggiaAuto</servlet-name>
+		<servlet-class>controller.NoleggiaAuto</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>NoleggiaAuto</servlet-name>
+		<url-pattern>/NoleggiaAuto</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>EliminaAutomobile</servlet-name>
+		<servlet-class>controller.EliminaAutomobile</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>EliminaAutomobile</servlet-name>
+		<url-pattern>/EliminaAutomobile</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Cookies</servlet-name>
+		<servlet-class>controller.Cookies</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Cookies</servlet-name>
+		<url-pattern>/Cookies</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LeNostreAuto</servlet-name>
+		<servlet-class>controller.LeNostreAuto</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LeNostreAuto</servlet-name>
+		<url-pattern>/LeNostreAuto</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>ConfermaOrdine</servlet-name>
+		<servlet-class>controller.ConfermaOrdine</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ConfermaOrdine</servlet-name>
+		<url-pattern>/ConfermaOrdine</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>RicercaConFiltri</servlet-name>
+		<servlet-class>controller.RicercaConFiltri</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RicercaConFiltri</servlet-name>
+		<url-pattern>/RicercaConFiltri</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>StoricoOrdini</servlet-name>
+		<servlet-class>controller.StoricoOrdini</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StoricoOrdini</servlet-name>
+		<url-pattern>/StoricoOrdini</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>ModificaAuto</servlet-name>
+		<servlet-class>controller.ModificaAuto</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ModificaAuto</servlet-name>
+		<url-pattern>/ModificaAuto</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AggiungiAlCarrello</servlet-name>
+		<servlet-class>controller.AggiungiAlCarrello</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AggiungiAlCarrello</servlet-name>
+		<url-pattern>/AggiungiAlCarrello</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>VisualizzaCarrello</servlet-name>
+		<servlet-class>controller.VisualizzaCarrello</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VisualizzaCarrello</servlet-name>
+		<url-pattern>/VisualizzaCarrello</url-pattern>
+	</servlet-mapping>
+	
+			<servlet>
+		<servlet-name>SvuotaCarrello</servlet-name>
+		<servlet-class>controller.SvuotaCarrello</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SvuotaCarrello</servlet-name>
+		<url-pattern>/SvuotaCarrello</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<servlet>
+		<servlet-name>CompraAutoCarrello</servlet-name>
+		<servlet-class>controller.CompraAutoCarrello</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CompraAutoCarrello</servlet-name>
+		<url-pattern>/CompraAutoCarrello</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LoginDaCarrello</servlet-name>
+		<servlet-class>controller.LoginDaCarrello</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>LoginDaCarrello</servlet-name>
+		<url-pattern>/LoginDaCarrello</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LoginDaNoleggio</servlet-name>
+		<servlet-class>controller.LoginDaNoleggio</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>LoginDaNoleggio</servlet-name>
+		<url-pattern>/LoginDaNoleggio</url-pattern>
+	</servlet-mapping>
+	
+
+	
+		<servlet>
+		<servlet-name>CaricaAutomobili</servlet-name>
+		<servlet-class>controller.CaricaAutomobili</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>CaricaAutomobili</servlet-name>
+		<url-pattern>/CaricaAutomobili</url-pattern>
+	</servlet-mapping>
+
+		<servlet>
+		<servlet-name>LogGoogle</servlet-name>
+		<servlet-class>controller.LogGoogle</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>LogGoogle</servlet-name>
+		<url-pattern>/LogGoogle</url-pattern>
+
+	</servlet-mapping>
+	
+
+	
+</web-app>
