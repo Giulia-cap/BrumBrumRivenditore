@@ -49,7 +49,6 @@ myChart1 = new Chart(ctx_live, {
      'Benzina'
    ]
  },
- 
  options: {
    maintainAspectRatio: false,
    responsive: true,
@@ -78,7 +77,7 @@ myChart1 = new Chart(ctx_live, {
 });
 }
 
-creaDiagrammaTorta();
+
 
 function cambiaDiagrammaTorta(){
 
@@ -138,8 +137,9 @@ for(var i = 0; i < listaMarca.length; i++){
       	    	
       	    	
       	     if(selezionata[0]!=0 || selezionata[1]!=0){
-      	   	
-      	   	creaDiagrammaTorta();
+      	    	 if(myChart1==null)
+      	    		 creaDiagrammaTorta();
+      	    	 
       	     myChart1.data.datasets[0].data.pop();
       	     myChart1.data.datasets[0].data.pop();
       	     myChart1.data.datasets[0].data.push(selezionata[0]);
@@ -149,8 +149,16 @@ for(var i = 0; i < listaMarca.length; i++){
       	     
       	     
       	     else{
-      	    	if(myChart1!=null)
+      	    	if(myChart1!=null){
       	    		myChart1.destroy(); 
+      	    		myChart1=null;
+      	    	}
+      	    	
+      	    	var weblink = document.getElementById("torta");
+      	    	var context = weblink.getContext("2d");
+      	    	context.font = "15px Verdana";
+      	    	context.fillText("Ops! Nessun Acquisto", 25, 50);
+      	    	
       	    }}
         });
 }
@@ -300,68 +308,8 @@ function graficoMese(){
 			  contDiesel++;
 	  }
 	    
-	    
-	    
-/*    // Percent Chart 2
-    var ctx = document.getElementById("torta");
-    if (ctx) {
-      ctx.height = 209;
-      var myChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-          datasets: [
-            {
-              label: "My First dataset",
-              data: [contDiesel, contBenzina],
-              backgroundColor: [
-                '#00b5e9',
-                '#fa4251'
-              ],
-              hoverBackgroundColor: [
-                '#00b5e9',
-                '#fa4251'
-              ],
-              borderWidth: [
-                0, 0
-              ],
-              hoverBorderColor: [
-                'transparent',
-                'transparent'
-              ]
-            }
-          ],
-          labels: [
-            'Diesel',
-            'Benzina'
-          ]
-        },
-        options: {
-          maintainAspectRatio: false,
-          responsive: true,
-          cutoutPercentage: 87,
-          animation: {
-            animateScale: true,
-            animateRotate: true
-          },
-          legend: {
-            display: false,
-            position: 'bottom',
-            labels: {
-              fontSize: 14,
-              fontFamily: "Poppins,sans-serif"
-            }
-
-          },
-          tooltips: {
-            titleFontFamily: "Poppins",
-            xPadding: 15,
-            yPadding: 10,
-            caretPadding: 0,
-            bodyFontSize: 16,
-          }
-        }
-      });
-    }*/
+	    creaDiagrammaTorta();   
+	   
 
   } catch (error) {
     console.log(error);
@@ -420,7 +368,7 @@ function prova()
 	    var spese = [annoPos0, annoPos1, annoPos2, annoPos3, annoPos4, annoPos5]
 	   
 	    if (document.getElementById("chartType").value=="PerAnno") {
-	      ctx.height = 430;
+	      ctx.height = 330;
 	       myChart = new Chart(ctx, {
 	        type: 'line',
 	        data: {
