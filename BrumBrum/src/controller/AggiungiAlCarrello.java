@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +21,7 @@ public class AggiungiAlCarrello extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		
+
 	}
 
 	@Override
@@ -33,13 +34,35 @@ public class AggiungiAlCarrello extends HttpServlet{
 		Automobile a=aDao.find((String) req.getSession().getAttribute("targa"));
 		String email=  req.getParameter("email");
 		Utente u=uda.find(email);
+
+		CarrelloDao cDao = factory.getCarrelloDao();
+		List<Automobile> autoNelCarrello= cDao.getAutoNelCarrello(email);		
+
+		boolean autoGiaPresenteNelCarrello=false;
 		if(u.getTipo().equals("rivenditore")) {
 
-		Carrello carrello=new Carrello(email, Double.parseDouble(a.getPrezzovendita()));
-		c.update(carrello);
-		aDao.auto_aggiunta_al_carrello(a.getTarga(), email);
-		
-		resp.sendRedirect("VisualizzaCarrello?email="+email);
+
+			for(int i=0;i<autoNelCarrello.size();i++)
+			{
+				if(autoNelCarrello.get(i).getTarga().equals( a.getTarga()) )
+				{
+					autoGiaPresenteNelCarrello=true;
+				}
+			}
+
+
+			if(!autoGiaPresenteNelCarrello)
+			{
+				Carrello carrello=new Carrello(email, Double.parseDouble(a.getPrezzovendita()));
+
+				c.update(carrello);
+				aDao.auto_aggiunta_al_carrello(a.getTarga(), email);
+
+				resp.sendRedirect("VisualizzaCarrello?email="+email);
+			}
+			else 
+				resp.sendRedirect("autoGiaPresenteNelCarrello.jsp");
+
 		}else {
 			resp.sendRedirect("erroreCarrelloRivenditore.jsp");
 

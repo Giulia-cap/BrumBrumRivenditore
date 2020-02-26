@@ -116,7 +116,7 @@
 						</label>
 					</div>
 				</div>
-				
+
 				<!-- TERZO BLOCCO DI CHECKBOX -->
 				<div class="col-sm-6 col-lg-3">
 					<h1>Cambio</h1>
@@ -147,47 +147,53 @@
 		<!-- FINE CHECKBOX FILTRI -->
 
 
+		<c:if test="${automobiliDisponibili.size() == 0}">
+			<h2>
+				Oops, al momento non abbiamo risultati per la tua ricerca! <span>.</span>
+			</h2>
+			<div class="form-row"></div>
+		</c:if>
+
+
 
 		<!-- INIZIO LISTA AUTO -->
 		<div class="container">
 			<div class="galleryy">
-	 	<!-- 	<c:if test="${stoCercandoTramiteParola == null}">  -->
-					<c:forEach items="${automobiliDisponibili}" var="autom">
-						<div class="${autom.getCategoria()}">
-							<!-- serve per il controllo -->
-							<div class="bg-gray " id="${autom.getCategoria()}">
-								<div class="${autom.getAlimentazione()}">
-									<div class="bg-gray " id="${autom.getAlimentazione()}">
+				<c:forEach items="${automobiliDisponibili}" var="autom">
+					<div class="${autom.getCategoria()}">
+						<!-- serve per il controllo -->
+						<div class="bg-gray " id="${autom.getCategoria()}">
+							<div class="${autom.getAlimentazione()}">
+								<div class="bg-gray " id="${autom.getAlimentazione()}">
 
-										<div class="${autom.getCambio()}">
-											<div class="bg-gray " id="${autom.getCambio()}">
+									<div class="${autom.getCambio()}">
+										<div class="bg-gray " id="${autom.getCambio()}">
 
-												<div class="${autom.getMarca()}">
-													<div class="bg-gray " id="${autom.getMarca()}">
+											<div class="${autom.getMarca()}">
+												<div class="bg-gray " id="${autom.getMarca()}">
 
-														<div class="${autom.getModello()}">
-															<div class="bg-gray " id="${autom.getModello()}">
+													<div class="${autom.getModello()}">
+														<div class="bg-gray " id="${autom.getModello()}">
 
-																<div class="row">
-																	<div class="col-lg-12 col-sm-6">
-																		<div class="single-product-item">
-																			<figure>
+															<div class="row">
+																<div class="col-lg-12 col-sm-6">
+																	<div class="single-product-item">
+																		<figure>
 
-																				<a
-																					href="VisAutoSelezionata?targa=${autom.getTarga()}"><img
-																					src="${autom.immagine}" alt=""></a>
+																			<a
+																				href="VisAutoSelezionata?targa=${autom.getTarga()}"><img
+																				src="${autom.immagine}" alt=""></a>
 
 
-																			</figure>
+																		</figure>
 
-																			<div class="product-text">
-																				<!-- visualizza -->
-																				<p class="cat">${autom.getCategoria()}</p>
-																				<p class="alim">${autom.getAlimentazione()}</p>
-																				<p class="camb">${autom.getCambio()}</p>
-																				<p class="marc">${autom.getMarca()}</p>
-																				<p class="mod">${autom.getModello()}</p>
-																			</div>
+																		<div class="product-text">
+																			<!-- visualizza -->
+																			<p class="cat">${autom.getCategoria()}</p>
+																			<p class="alim">${autom.getAlimentazione()}</p>
+																			<p class="camb">${autom.getCambio()}</p>
+																			<p class="marc">${autom.getMarca()}</p>
+																			<p class="mod">${autom.getModello()}</p>
 																		</div>
 																	</div>
 																</div>
@@ -201,13 +207,14 @@
 								</div>
 							</div>
 						</div>
+					</div>
 
 
-					</c:forEach>
-	 		<!-- 	</c:if>  -->
+				</c:forEach>
 
 
-		<!--  		<c:if test="${stoCercandoTramiteParola != null}">
+
+				<!--  		<c:if test="${stoCercandoTramiteParola != null}">
 					<c:forEach items="${automoDisponibiliConParolaChiave}"
 						var="autoConParolaChiave">
 						<input class="listaTutteLeAuto" ${autoConParolaChiave}

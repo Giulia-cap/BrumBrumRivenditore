@@ -49,6 +49,7 @@ myChart1 = new Chart(ctx_live, {
      'Benzina'
    ]
  },
+ 
  options: {
    maintainAspectRatio: false,
    responsive: true,
