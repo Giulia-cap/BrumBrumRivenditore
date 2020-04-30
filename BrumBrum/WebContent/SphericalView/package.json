@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/seancoyne/pano",
   "dependencies": {
-  	"jquery": "^1.8.3"
+  	"jquery": "^3.5.0"
 	},
   "devDependencies": {
     "grunt": "^0.4.5",
